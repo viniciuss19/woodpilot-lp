@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WoodPilot — Sistema de gestão para madeireiras</title>
+    <meta
+      name="description"
+      content="Controle produtos, cubagem, compras, estoque, vendas, financeiro e entregas em um único sistema feito para a realidade das madeireiras."
+    />
+    <meta property="og:title" content="WoodPilot — Sistema de gestão para madeireiras" />
+    <meta
+      property="og:description"
+      content="Controle produtos, cubagem, compras, estoque, vendas, financeiro e entregas em um único sistema feito para a realidade das madeireiras."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/assets/painel.png" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="WoodPilot" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="WoodPilot — Sistema de gestão para madeireiras" />
+    <meta
+      name="twitter:description"
+      content="Controle produtos, cubagem, compras, estoque, vendas, financeiro e entregas em um único sistema feito para a realidade das madeireiras."
+    />
+    <meta name="twitter:image" content="/assets/painel.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <div class="wp-landing min-h-screen bg-canvas text-ink">
+      <header class="sticky top-0 z-40 border-b border-line bg-surface/95 backdrop-blur">
+        <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
+          <a href="#inicio" class="inline-flex items-center" aria-label="WoodPilot — início">
+            <span class="flex min-w-0 items-center gap-3">
+              <svg class="h-10 w-10 shrink-0 text-primary" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <rect width="48" height="48" rx="11" fill="currentColor" />
+                <path d="M10 38V11h11.5c8.2 0 13.2 4.1 13.2 11 0 7.1-5.2 11.3-13.2 11.3H17V38h-7Z" fill="white" />
+                <path d="m21.2 13.3-4.2 6h2.7l-4.1 5.5h3.1l-4.8 6.5h14.5l-4.7-6.5h3l-4-5.5h2.6l-4.1-6Z" fill="#1B4D3E" />
+                <path d="M34 13.5c4.6 2 7 5.3 7 9.7s-2.4 7.6-7 9.6" stroke="#B07830" stroke-width="2.3" stroke-linecap="round" />
+                <path d="M37.5 10.5c6 2.8 9 7 9 12.7 0 5.5-3 9.8-9 12.5" stroke="#D29A51" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+              <span class="flex items-baseline whitespace-nowrap text-[21px] font-bold leading-none tracking-[-0.04em]">
+                <span class="text-primary">Wood</span><span class="text-accent">Pilot</span>
+              </span>
+            </span>
+          </a>
+
+          <nav class="hidden items-center gap-7 text-sm font-medium text-ink-muted lg:flex" aria-label="Seções">
+            <a href="#problema" class="transition hover:text-ink">Por que</a>
+            <a href="#como-funciona" class="transition hover:text-ink">Como funciona</a>
+            <a href="#produto" class="transition hover:text-ink">Produto</a>
+            <a href="#recursos" class="transition hover:text-ink">Recursos</a>
+            <a href="#preco" class="transition hover:text-ink">Preço</a>
+          </nav>
+
+          <div class="hidden items-center gap-2 lg:flex">
+            <a data-erp="/login" href="#" class="wp-cta wp-cta--ghost">Entrar</a>
+            <a data-cta href="#" class="wp-cta wp-cta--primary">Quero conhecer o WoodPilot</a>
+          </div>
+
+          <button
+            type="button"
+            class="inline-flex size-10 items-center justify-center rounded-[var(--wp-radius)] border border-line text-ink lg:hidden"
+            data-menu-toggle
+            aria-expanded="false"
+            aria-controls="landing-menu"
+            aria-label="Abrir menu"
+          >
+            <svg data-icon-open class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+            <svg data-icon-close class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" hidden>
+              <path d="M6 6l12 12M18 6 6 18" />
+            </svg>
+          </button>
+        </div>
+
+        <div id="landing-menu" data-menu class="border-t border-line bg-surface lg:hidden" hidden>
+          <nav class="mx-auto flex max-w-6xl flex-col px-5 py-3 text-base font-medium sm:px-8" aria-label="Seções">
+            <a href="#problema" class="py-3 text-ink">Por que</a>
+            <a href="#como-funciona" class="border-t border-line py-3 text-ink">Como funciona</a>
+            <a href="#produto" class="border-t border-line py-3 text-ink">Produto</a>
+            <a href="#recursos" class="border-t border-line py-3 text-ink">Recursos</a>
+            <a href="#preco" class="border-t border-line py-3 text-ink">Preço</a>
+            <div class="mt-2 flex flex-col gap-2 border-t border-line pt-4 pb-2">
+              <a data-cta href="#" class="wp-cta wp-cta--primary w-full">Quero conhecer o WoodPilot</a>
+              <a data-erp="/login" href="#" class="wp-cta wp-cta--secondary w-full">Entrar</a>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main id="inicio">
+        <!-- Hero -->
+        <section class="wp-hero relative overflow-hidden border-b border-line">
+          <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14 lg:py-24">
+            <div class="relative z-10 max-w-xl">
+              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                Sistema de gestão para madeireiras
+              </p>
+              <h1 class="mt-4 text-4xl font-semibold leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-[3.35rem]">
+                A gestão da sua madeireira, do estoque à entrega.
+              </h1>
+              <p class="mt-6 text-lg leading-8 text-ink-muted">
+                Controle produtos, cubagem, compras, estoque, vendas, financeiro e entregas em um
+                único sistema feito para a realidade das madeireiras.
+              </p>
+              <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a data-cta href="#" class="wp-cta wp-cta--primary wp-cta--lg">Quero conhecer o WoodPilot</a>
+                <a href="#como-funciona" class="wp-cta wp-cta--secondary wp-cta--lg">Ver como funciona</a>
+              </div>
+              <dl class="mt-10 grid grid-cols-3 gap-4 border-t border-line pt-6 text-sm">
+                <div>
+                  <dt class="text-xs font-medium uppercase tracking-wide text-ink-muted">Estoque em</dt>
+                  <dd class="wp-num mt-1 font-semibold text-ink">m³ · m² · peças</dd>
+                </div>
+                <div>
+                  <dt class="text-xs font-medium uppercase tracking-wide text-ink-muted">Custo</dt>
+                  <dd class="mt-1 font-semibold text-ink">Médio por produto</dd>
+                </div>
+                <div>
+                  <dt class="text-xs font-medium uppercase tracking-wide text-ink-muted">Entrega</dt>
+                  <dd class="mt-1 font-semibold text-ink">Romaneio da venda</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="relative" data-reveal>
+              <div class="wp-hero-backdrop wp-wood-grain" aria-hidden="true"></div>
+              <figure class="wp-shot relative">
+                <figcaption class="wp-shot__bar">
+                  <span class="wp-shot__dot"></span>
+                  <span>WoodPilot · Painel · Madeireira Demo</span>
+                </figcaption>
+                <img
+                  src="/assets/painel.png"
+                  width="1425"
+                  height="963"
+                  alt="Painel do WoodPilot com caixa, vendas, contas a receber e estoque baixo da madeireira"
+                  fetchpriority="high"
+                  decoding="async"
+                  class="block w-full"
+                />
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <!-- Problema -->
+        <section id="problema" class="wp-wood-grain scroll-mt-16 bg-primary text-white">
+          <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+            <div class="max-w-2xl" data-reveal>
+              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent-light">O problema</p>
+              <h2 class="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+                Planilhas não acompanham uma madeireira.
+              </h2>
+              <p class="mt-4 text-base leading-7 text-white/70">
+                Madeira se compra em peça, se estoca em metro cúbico e se vende em metro quadrado. Com
+                caminhão saindo todo dia, a planilha fica para trás em cinco pontos.
+              </p>
+            </div>
+
+            <ol class="mt-12 divide-y divide-white/10 border-y border-white/10">
+              <li class="grid gap-3 py-6 md:grid-cols-[4rem_10rem_1fr] md:gap-8 md:py-7" data-reveal data-reveal-delay="0">
+                <span class="wp-num text-sm font-semibold text-accent-light">01</span>
+                <span class="text-xs font-semibold uppercase tracking-[0.16em] text-white/55 md:pt-1">Estoque</span>
+                <div class="max-w-2xl">
+                  <h3 class="text-lg font-semibold leading-snug sm:text-xl">O saldo da planilha não bate com o pátio.</h3>
+                  <p class="mt-2 text-sm leading-6 text-white/65 sm:text-base sm:leading-7">
+                    Entrada por compra, baixa por venda e ajuste manual precisam fechar em m³, m² e peças — sem recontagem toda semana.
+                  </p>
+                </div>
+              </li>
+              <li class="grid gap-3 py-6 md:grid-cols-[4rem_10rem_1fr] md:gap-8 md:py-7" data-reveal data-reveal-delay="60">
+                <span class="wp-num text-sm font-semibold text-accent-light">02</span>
+                <span class="text-xs font-semibold uppercase tracking-[0.16em] text-white/55 md:pt-1">Cubagem</span>
+                <div class="max-w-2xl">
+                  <h3 class="text-lg font-semibold leading-snug sm:text-xl">Cada um calcula o metro cúbico de um jeito.</h3>
+                  <p class="mt-2 text-sm leading-6 text-white/65 sm:text-base sm:leading-7">
+                    Espessura, largura e comprimento ficam no cadastro do produto. O m³ e o m² por peça saem sempre iguais, na venda e na compra.
+                  </p>
+                </div>
+              </li>
+              <li class="grid gap-3 py-6 md:grid-cols-[4rem_10rem_1fr] md:gap-8 md:py-7" data-reveal data-reveal-delay="120">
+                <span class="wp-num text-sm font-semibold text-accent-light">03</span>
+                <span class="text-xs font-semibold uppercase tracking-[0.16em] text-white/55 md:pt-1">Margem</span>
+                <div class="max-w-2xl">
+                  <h3 class="text-lg font-semibold leading-snug sm:text-xl">Você sabe o preço, mas não o custo de cada venda.</h3>
+                  <p class="mt-2 text-sm leading-6 text-white/65 sm:text-base sm:leading-7">
+                    O custo médio muda a cada compra recebida. Sem isso, a margem que aparece no fim do mês é um chute.
+                  </p>
+                </div>
+              </li>
+              <li class="grid gap-3 py-6 md:grid-cols-[4rem_10rem_1fr] md:gap-8 md:py-7" data-reveal data-reveal-delay="180">
+                <span class="wp-num text-sm font-semibold text-accent-light">04</span>
+                <span class="text-xs font-semibold uppercase tracking-[0.16em] text-white/55 md:pt-1">Financeiro</span>
+                <div class="max-w-2xl">
+                  <h3 class="text-lg font-semibold leading-snug sm:text-xl">Conta vencida descoberta tarde demais.</h3>
+                  <p class="mt-2 text-sm leading-6 text-white/65 sm:text-base sm:leading-7">
+                    Contas a receber e a pagar nascem da venda e da compra. Quando moram em outra planilha, o caixa fecha com atraso e com erro.
+                  </p>
+                </div>
+              </li>
+              <li class="grid gap-3 py-6 md:grid-cols-[4rem_10rem_1fr] md:gap-8 md:py-7" data-reveal data-reveal-delay="240">
+                <span class="wp-num text-sm font-semibold text-accent-light">05</span>
+                <span class="text-xs font-semibold uppercase tracking-[0.16em] text-white/55 md:pt-1">Entregas</span>
+                <div class="max-w-2xl">
+                  <h3 class="text-lg font-semibold leading-snug sm:text-xl">O caminhão sai e ninguém sabe o que foi carregado.</h3>
+                  <p class="mt-2 text-sm leading-6 text-white/65 sm:text-base sm:leading-7">
+                    Sem romaneio ligado à venda, a conferência da carga e da entrega depende da memória de quem carregou.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- Fluxo -->
+        <section id="como-funciona" class="scroll-mt-16 border-b border-line bg-surface">
+          <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+            <div class="max-w-2xl" data-reveal>
+              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Como funciona</p>
+              <h2 class="mt-3 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+                Uma operação inteira, conectada de ponta a ponta.
+              </h2>
+              <p class="mt-4 text-base leading-7 text-ink-muted">
+                Cada etapa alimenta a seguinte. O que entra na compra atualiza o estoque e o custo; o
+                que sai na venda gera a cobrança, o romaneio e a margem.
+              </p>
+            </div>
+
+            <ol class="wp-flow mt-12" data-reveal>
+              <li class="wp-flow__step">
+                <span class="wp-flow__icon">
+                  <svg class="wp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1" /><circle cx="18" cy="20" r="1" /><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.5L21 8H7" /></svg>
+                </span>
+                <div class="min-w-0">
+                  <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent"><span class="wp-num">01</span></p>
+                  <h3 class="mt-1 text-base font-semibold text-ink">Compra</h3>
+                  <p class="mt-1 text-sm leading-6 text-ink-muted">Pedido ao fornecedor e recebimento no pátio.</p>
+                </div>
+              </li>
+              <li class="wp-flow__step">
+                <span class="wp-flow__icon">
+                  <svg class="wp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9l9-6 9 6v12" /><path d="M9 21v-8h6v8" /><path d="M3 9h18" /></svg>
+                </span>
+                <div class="min-w-0">
+                  <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent"><span class="wp-num">02</span></p>
+                  <h3 class="mt-1 text-base font-semibold text-ink">Estoque</h3>
+                  <p class="mt-1 text-sm leading-6 text-ink-muted">Saldo em m³, m² e peças, com custo médio.</p>
+                </div>
+              </li>
+              <li class="wp-flow__step">
+                <span class="wp-flow__icon">
+                  <svg class="wp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" /><path d="M7 7h.01" /></svg>
+                </span>
+                <div class="min-w-0">
+                  <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent"><span class="wp-num">03</span></p>
+                  <h3 class="mt-1 text-base font-semibold text-ink">Venda</h3>
+                  <p class="mt-1 text-sm leading-6 text-ink-muted">Orçamento vira venda; a venda baixa o estoque.</p>
+                </div>
+              </li>
+              <li class="wp-flow__step">
+                <span class="wp-flow__icon">
+                  <svg class="wp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h18a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7Z" /><path d="M2 7V5a2 2 0 0 1 2-2h12" /><circle cx="16" cy="13" r="1.5" /></svg>
+                </span>
+                <div class="min-w-0">
+                  <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent"><span class="wp-num">04</span></p>
+                  <h3 class="mt-1 text-base font-semibold text-ink">Financeiro</h3>
+                  <p class="mt-1 text-sm leading-6 text-ink-muted">Contas a receber e a pagar geradas na hora.</p>
+                </div>
+              </li>
+              <li class="wp-flow__step">
+                <span class="wp-flow__icon">
+                  <svg class="wp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /><path d="M8 13h8" /><path d="M8 17h8" /><path d="M8 9h2" /></svg>
+                </span>
+                <div class="min-w-0">
+                  <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent"><span class="wp-num">05</span></p>
+                  <h3 class="mt-1 text-base font-semibold text-ink">Romaneio</h3>
+                  <p class="mt-1 text-sm leading-6 text-ink-muted">Itens, volumes e motorista da carga.</p>
+                </div>
+              </li>
+              <li class="wp-flow__step">
+                <span class="wp-flow__icon">
+                  <svg class="wp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h12v10H1z" /><path d="M13 10h4l3 3v4h-7v-7Z" /><circle cx="5.5" cy="17.5" r="1.5" /><circle cx="16.5" cy="17.5" r="1.5" /></svg>
+                </span>
+                <div class="min-w-0">
+                  <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent"><span class="wp-num">06</span></p>
+                  <h3 class="mt-1 text-base font-semibold text-ink">Entrega</h3>
+                  <p class="mt-1 text-sm leading-6 text-ink-muted">Saída, entrega e confirmação por venda.</p>
+                </div>
+              </li>
+              <li class="wp-flow__step">
+                <span class="wp-flow__icon">
+                  <svg class="wp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5" /><path d="M4 19h16" /><path d="M8 16v-5" /><path d="M12 16V8" /><path d="M16 16v-3" /></svg>
+                </span>
+                <div class="min-w-0">
+                  <p class="text-xs font-semibold uppercase tracking-[0.14em] text-accent"><span class="wp-num">07</span></p>
+                  <h3 class="mt-1 text-base font-semibold text-ink">Lucratividade</h3>
+                  <p class="mt-1 text-sm leading-6 text-ink-muted">Receita, custo e margem por venda e produto.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- Produto -->
+        <section id="produto" class="scroll-mt-16 bg-canvas">
+          <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+            <div class="max-w-2xl" data-reveal>
+              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">O produto</p>
+              <h2 class="mt-3 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+                Telas feitas para o dia a dia do pátio e do escritório.
+              </h2>
+            </div>
+
+            <div class="mt-14 space-y-20 sm:mt-16 sm:space-y-28">
+              <article id="produto-estoque" class="grid items-center gap-8 lg:grid-cols-12 lg:gap-12" data-reveal>
+                <div class="lg:col-span-5">
+                  <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Estoque</p>
+                  <h3 class="mt-3 text-2xl font-semibold leading-snug tracking-tight text-ink sm:text-3xl">O saldo do pátio, por produto, em tempo real.</h3>
+                  <p class="mt-4 text-base leading-7 text-ink-muted">Cada compra recebida entra, cada venda concluída baixa. O saldo aparece na unidade da madeira — m³, m², peças — com mínimo por produto e alerta de estoque baixo.</p>
+                  <ul class="mt-6 space-y-2.5">
+                    <li class="flex items-start gap-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Saldo em m³, m² e unidades</span></li>
+                    <li class="flex items-start gap-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Mínimo e alerta de estoque baixo</span></li>
+                    <li class="flex items-start gap-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Histórico de movimentações por produto</span></li>
+                  </ul>
+                </div>
+                <figure class="wp-shot lg:col-span-7">
+                  <figcaption class="wp-shot__bar"><span class="wp-shot__dot"></span><span>WoodPilot · Estoque</span></figcaption>
+                  <img src="/assets/estoque.png" width="1425" height="963" alt="Tela de estoque do WoodPilot com saldo por produto" loading="lazy" decoding="async" class="block w-full" />
+                </figure>
+              </article>
+
+              <article id="produto-produtos" class="grid items-center gap-8 lg:grid-cols-12 lg:gap-12" data-reveal>
+                <div class="lg:col-span-5 lg:order-2">
+                  <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Produtos e cubagem</p>
+                  <h3 class="mt-3 text-2xl font-semibold leading-snug tracking-tight text-ink sm:text-3xl">Cadastre a peça uma vez. A cubagem sai sozinha.</h3>
+                  <p class="mt-4 text-base leading-7 text-ink-muted">Espessura, largura e comprimento no cadastro do produto. O WoodPilot calcula m³ e m² por peça e converte entre unidades na venda, na compra e no preço.</p>
+                  <ul class="mt-6 space-y-2.5">
+                    <li class="flex items-start gap-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Dimensões por produto</span></li>
+                    <li class="flex items-start gap-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>m³ e m² por peça calculados</span></li>
+                    <li class="flex items-start gap-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Preço equivalente por m³ e por m²</span></li>
+                  </ul>
+                </div>
+                <figure class="wp-shot lg:col-span-7 lg:order-1">
+                  <figcaption class="wp-shot__bar"><span class="wp-shot__dot"></span><span>WoodPilot · Produtos e cubagem</span></figcaption>
+                  <img src="/assets/produtos.png" width="1425" height="963" alt="Tela de produtos do WoodPilot com dimensões e cubagem" loading="lazy" decoding="async" class="block w-full" />
+                </figure>
+              </article>
+
+              <article id="produto-vendas" class="grid items-center gap-8 lg:grid-cols-12 lg:gap-12" data-reveal>
+                <div class="lg:col-span-5">
+                  <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Vendas e lucratividade</p>
+                  <h3 class="mt-3 text-2xl font-semibold leading-snug tracking-tight text-ink sm:text-3xl">Venda com custo real, não com custo estimado.</h3>
+                  <p class="mt-4 text-base leading-7 text-ink-muted">O custo médio ponderado é atualizado a cada compra recebida. Na lucratividade você vê receita, custo e margem por venda, por produto e por período.</p>
+                  <ul class="mt-6 space-y-2.5">
+                    <li class="flex items-start gap-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Orçamento → venda em um clique</span></li>
+                    <li class="flex items-start gap-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Custo médio ponderado por produto</span></li>
+                    <li class="flex items-start gap-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Margem por venda, produto e período</span></li>
+                  </ul>
+                </div>
+                <figure class="wp-shot lg:col-span-7">
+                  <figcaption class="wp-shot__bar"><span class="wp-shot__dot"></span><span>WoodPilot · Vendas e lucratividade</span></figcaption>
+                  <img src="/assets/vendas.png" width="1425" height="963" alt="Lista de vendas do WoodPilot com status, total e cliente" loading="lazy" decoding="async" class="block w-full" />
+                </figure>
+              </article>
+
+              <article id="produto-financeiro" class="grid items-center gap-8 lg:grid-cols-12 lg:gap-12" data-reveal>
+                <div class="lg:col-span-5 lg:order-2">
+                  <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Financeiro</p>
+                  <h3 class="mt-3 text-2xl font-semibold leading-snug tracking-tight text-ink sm:text-3xl">Contas a pagar, a receber e caixa no mesmo lugar da operação.</h3>
+                  <p class="mt-4 text-base leading-7 text-ink-muted">A venda gera o contas a receber. A compra gera o contas a pagar. O fluxo de caixa mostra o que entrou, o que saiu e o que vence — sem redigitar nada.</p>
+                  <ul class="mt-6 space-y-2.5">
+                    <li class="flex items-start gap-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Contas a receber geradas da venda</span></li>
+                    <li class="flex items-start gap-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Contas a pagar geradas da compra</span></li>
+                    <li class="flex items-start gap-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Fluxo de caixa por conta e período</span></li>
+                  </ul>
+                </div>
+                <figure class="wp-shot lg:col-span-7 lg:order-1">
+                  <figcaption class="wp-shot__bar"><span class="wp-shot__dot"></span><span>WoodPilot · Financeiro</span></figcaption>
+                  <img src="/assets/financeiro.png" width="1425" height="963" alt="Fluxo de caixa do WoodPilot" loading="lazy" decoding="async" class="block w-full" />
+                </figure>
+              </article>
+
+              <article id="produto-romaneios" class="grid items-center gap-8 lg:grid-cols-12 lg:gap-12" data-reveal>
+                <div class="lg:col-span-5">
+                  <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Romaneios e entregas</p>
+                  <h3 class="mt-3 text-2xl font-semibold leading-snug tracking-tight text-ink sm:text-3xl">O que saiu no caminhão é o que foi vendido.</h3>
+                  <p class="mt-4 text-base leading-7 text-ink-muted">O romaneio nasce da venda concluída: itens, volumes, cliente e motorista. Acompanhe o status da entrega e confira a carga sem papel solto.</p>
+                  <ul class="mt-6 space-y-2.5">
+                    <li class="flex items-start gap-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Romaneio gerado da venda</span></li>
+                    <li class="flex items-start gap-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Itens, volumes e motorista</span></li>
+                    <li class="flex items-start gap-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Status de saída e entrega</span></li>
+                  </ul>
+                </div>
+                <figure class="wp-shot lg:col-span-7">
+                  <figcaption class="wp-shot__bar"><span class="wp-shot__dot"></span><span>WoodPilot · Romaneios e entregas</span></figcaption>
+                  <img src="/assets/entregas.png" width="1425" height="963" alt="Tela de entregas e romaneios do WoodPilot" loading="lazy" decoding="async" class="block w-full" />
+                </figure>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- Recursos -->
+        <section id="recursos" class="scroll-mt-16 border-y border-line bg-surface">
+          <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+            <div class="max-w-2xl" data-reveal>
+              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Recursos</p>
+              <h2 class="mt-3 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+                Os módulos de uma madeireira. Nada a mais, nada a menos.
+              </h2>
+            </div>
+
+            <div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+              <div class="border-t-2 border-primary pt-5" data-reveal>
+                <div class="flex items-center gap-2.5 text-primary">
+                  <svg class="wp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V9l9-6 9 6v12" /><path d="M9 21v-8h6v8" /><path d="M3 9h18" /></svg>
+                  <h3 class="text-sm font-semibold uppercase tracking-[0.12em] text-ink">Catálogo e estoque</h3>
+                </div>
+                <ul class="mt-4 divide-y divide-line">
+                  <li class="py-2.5 text-[15px] text-ink">Produtos e cubagem</li>
+                  <li class="py-2.5 text-[15px] text-ink">Estoque</li>
+                  <li class="py-2.5 text-[15px] text-ink">Compras</li>
+                  <li class="py-2.5 text-[15px] text-ink">Fornecedores</li>
+                  <li class="py-2.5 text-[15px] text-ink">Importação Excel</li>
+                </ul>
+              </div>
+              <div class="border-t-2 border-primary pt-5" data-reveal data-reveal-delay="60">
+                <div class="flex items-center gap-2.5 text-primary">
+                  <svg class="wp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" /><path d="M7 7h.01" /></svg>
+                  <h3 class="text-sm font-semibold uppercase tracking-[0.12em] text-ink">Comercial</h3>
+                </div>
+                <ul class="mt-4 divide-y divide-line">
+                  <li class="py-2.5 text-[15px] text-ink">Clientes</li>
+                  <li class="py-2.5 text-[15px] text-ink">Orçamentos</li>
+                  <li class="py-2.5 text-[15px] text-ink">Vendas</li>
+                  <li class="py-2.5 text-[15px] text-ink">Tabelas de preço</li>
+                </ul>
+              </div>
+              <div class="border-t-2 border-primary pt-5" data-reveal data-reveal-delay="120">
+                <div class="flex items-center gap-2.5 text-primary">
+                  <svg class="wp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h18a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7Z" /><path d="M2 7V5a2 2 0 0 1 2-2h12" /><circle cx="16" cy="13" r="1.5" /></svg>
+                  <h3 class="text-sm font-semibold uppercase tracking-[0.12em] text-ink">Financeiro</h3>
+                </div>
+                <ul class="mt-4 divide-y divide-line">
+                  <li class="py-2.5 text-[15px] text-ink">Contas a pagar</li>
+                  <li class="py-2.5 text-[15px] text-ink">Contas a receber</li>
+                  <li class="py-2.5 text-[15px] text-ink">Fluxo de caixa</li>
+                  <li class="py-2.5 text-[15px] text-ink">Lucratividade</li>
+                </ul>
+              </div>
+              <div class="border-t-2 border-primary pt-5" data-reveal data-reveal-delay="180">
+                <div class="flex items-center gap-2.5 text-primary">
+                  <svg class="wp-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h12v10H1z" /><path d="M13 10h4l3 3v4h-7v-7Z" /><circle cx="5.5" cy="17.5" r="1.5" /><circle cx="16.5" cy="17.5" r="1.5" /></svg>
+                  <h3 class="text-sm font-semibold uppercase tracking-[0.12em] text-ink">Operação e controle</h3>
+                </div>
+                <ul class="mt-4 divide-y divide-line">
+                  <li class="py-2.5 text-[15px] text-ink">Romaneios</li>
+                  <li class="py-2.5 text-[15px] text-ink">Entregas</li>
+                  <li class="py-2.5 text-[15px] text-ink">Usuários e permissões</li>
+                  <li class="py-2.5 text-[15px] text-ink">Auditoria</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Para quem é -->
+        <section id="para-quem" class="scroll-mt-16 bg-canvas">
+          <div class="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-12 lg:gap-16">
+            <div class="lg:col-span-5" data-reveal>
+              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Para quem é</p>
+              <h2 class="mt-3 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+                Feito para quem vive a operação da madeira.
+              </h2>
+              <p class="mt-4 text-base leading-7 text-ink-muted">
+                O WoodPilot foi pensado para empresas que compram, estocam, vendem e entregam madeira
+                serrada — e precisam que o número do sistema seja o número do pátio.
+              </p>
+              <p class="mt-4 text-base leading-7 text-ink-muted">
+                Não é um ERP genérico adaptado. A unidade de medida, o custo e a entrega já nascem do
+                jeito que a madeireira trabalha.
+              </p>
+            </div>
+
+            <dl class="border-t border-line lg:col-span-7" data-reveal data-reveal-delay="80">
+              <div class="grid gap-1 border-b border-line py-4 sm:grid-cols-[11rem_1fr] sm:gap-6">
+                <dt class="wp-num text-sm font-semibold text-ink">Madeira serrada</dt>
+                <dd class="text-sm leading-6 text-ink-muted">Tábuas, vigas, caibros, ripas e pranchas com dimensão por peça.</dd>
+              </div>
+              <div class="grid gap-1 border-b border-line py-4 sm:grid-cols-[11rem_1fr] sm:gap-6">
+                <dt class="wp-num text-sm font-semibold text-ink">m³ e m²</dt>
+                <dd class="text-sm leading-6 text-ink-muted">Compra, estoque e venda na unidade real da madeira, não só em peças.</dd>
+              </div>
+              <div class="grid gap-1 border-b border-line py-4 sm:grid-cols-[11rem_1fr] sm:gap-6">
+                <dt class="wp-num text-sm font-semibold text-ink">Estoque físico</dt>
+                <dd class="text-sm leading-6 text-ink-muted">Saldo que precisa bater com o pátio, não com uma planilha.</dd>
+              </div>
+              <div class="grid gap-1 border-b border-line py-4 sm:grid-cols-[11rem_1fr] sm:gap-6">
+                <dt class="wp-num text-sm font-semibold text-ink">Compras</dt>
+                <dd class="text-sm leading-6 text-ink-muted">Pedido, recebimento e custo médio por fornecedor.</dd>
+              </div>
+              <div class="grid gap-1 border-b border-line py-4 sm:grid-cols-[11rem_1fr] sm:gap-6">
+                <dt class="wp-num text-sm font-semibold text-ink">Vendas</dt>
+                <dd class="text-sm leading-6 text-ink-muted">Orçamento, venda, preço por tabela e margem real.</dd>
+              </div>
+              <div class="grid gap-1 border-b border-line py-4 sm:grid-cols-[11rem_1fr] sm:gap-6">
+                <dt class="wp-num text-sm font-semibold text-ink">Entregas</dt>
+                <dd class="text-sm leading-6 text-ink-muted">Romaneio, caminhão, motorista e confirmação de entrega.</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <!-- Preço -->
+        <section id="preco" class="scroll-mt-16 border-t border-line bg-surface">
+          <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+            <div class="mx-auto max-w-2xl text-center" data-reveal>
+              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Preço</p>
+              <h2 class="mt-3 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+                Um plano. Todos os módulos.
+              </h2>
+            </div>
+
+            <div class="mx-auto mt-12 max-w-xl overflow-hidden rounded-[var(--wp-radius-lg)] border border-line-strong bg-surface" data-reveal data-reveal-delay="80">
+              <div class="wp-wood-grain bg-primary px-6 py-6 text-white sm:px-8">
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-accent-light">Plano</p>
+                <p class="mt-1 text-2xl font-semibold tracking-tight">WoodPilot</p>
+              </div>
+              <div class="px-6 py-7 sm:px-8">
+                <p class="flex items-baseline gap-1">
+                  <span class="wp-num text-5xl font-semibold tracking-tight text-ink">R$249</span>
+                  <span class="text-lg text-ink-muted">/mês</span>
+                </p>
+                <p class="mt-3 text-base font-medium text-ink">Implantação assistida para os primeiros clientes.</p>
+                <ul class="mt-6 divide-y divide-line border-y border-line">
+                  <li class="flex items-start gap-3 py-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Todos os módulos listados acima</span></li>
+                  <li class="flex items-start gap-3 py-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Importação dos seus produtos e clientes via Excel</span></li>
+                  <li class="flex items-start gap-3 py-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Implantação assistida: cadastro inicial junto com a sua equipe</span></li>
+                  <li class="flex items-start gap-3 py-3 text-sm text-ink"><svg class="mt-0.5 size-4 shrink-0 text-primary" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 10.5 4 4 8-9" /></svg><span>Suporte por WhatsApp e e-mail</span></li>
+                </ul>
+                <a data-cta href="#" class="wp-cta wp-cta--primary wp-cta--lg mt-7 w-full">Quero conhecer o WoodPilot</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA final -->
+        <section class="wp-wood-grain bg-primary text-white">
+          <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+            <div class="mx-auto max-w-2xl text-center" data-reveal>
+              <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+                Organize sua operação. Enxergue seu resultado.
+              </h2>
+              <p class="mt-5 text-base leading-7 text-white/70 sm:text-lg">
+                Converse com a gente, mostre como a sua madeireira trabalha hoje e veja o WoodPilot
+                rodando com os seus produtos.
+              </p>
+              <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <a data-cta href="#" class="wp-cta wp-cta--inverse wp-cta--lg">Quero conhecer o WoodPilot</a>
+                <a data-erp="/login" href="#" class="wp-cta wp-cta--outline-inverse wp-cta--lg">Já sou cliente</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t border-line bg-surface">
+        <div class="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 sm:px-8 md:flex-row md:items-center md:justify-between">
+          <div>
+            <span class="flex min-w-0 items-center gap-3">
+              <svg class="h-10 w-10 shrink-0 text-primary" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <rect width="48" height="48" rx="11" fill="currentColor" />
+                <path d="M10 38V11h11.5c8.2 0 13.2 4.1 13.2 11 0 7.1-5.2 11.3-13.2 11.3H17V38h-7Z" fill="white" />
+                <path d="m21.2 13.3-4.2 6h2.7l-4.1 5.5h3.1l-4.8 6.5h14.5l-4.7-6.5h3l-4-5.5h2.6l-4.1-6Z" fill="#1B4D3E" />
+                <path d="M34 13.5c4.6 2 7 5.3 7 9.7s-2.4 7.6-7 9.6" stroke="#B07830" stroke-width="2.3" stroke-linecap="round" />
+                <path d="M37.5 10.5c6 2.8 9 7 9 12.7 0 5.5-3 9.8-9 12.5" stroke="#D29A51" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+              <span class="flex items-baseline whitespace-nowrap text-[21px] font-bold leading-none tracking-[-0.04em]">
+                <span class="text-primary">Wood</span><span class="text-accent">Pilot</span>
+              </span>
+            </span>
+            <p class="mt-3 max-w-sm text-sm leading-6 text-ink-muted">
+              Sistema de gestão para madeireiras: estoque, cubagem, vendas, financeiro e entregas.
+            </p>
+          </div>
+          <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted" aria-label="Rodapé">
+            <a data-erp="/login" href="#" class="hover:text-ink">Entrar</a>
+            <a data-erp="/suporte" href="#" class="hover:text-ink">Suporte</a>
+            <a data-erp="/termos" href="#" class="hover:text-ink">Termos</a>
+            <a data-erp="/privacidade" href="#" class="hover:text-ink">Privacidade</a>
+          </nav>
+        </div>
+        <div class="border-t border-line">
+          <p class="mx-auto max-w-6xl px-5 py-4 text-xs text-ink-muted sm:px-8">
+            © <span data-year>2026</span> WoodPilot. Todos os direitos reservados.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
