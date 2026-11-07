@@ -3,7 +3,7 @@
 const trimSlash = (value) => (value || '').replace(/\/+$/, '');
 
 export const config = {
-  erpUrl: trimSlash(import.meta.env.VITE_ERP_URL || 'http://localhost:4200'),
+  erpUrl: trimSlash(import.meta.env.VITE_ERP_URL || 'http://app.woodpilot.com.br'),
   siteUrl: trimSlash(import.meta.env.VITE_SITE_URL || ''),
   supportWhatsApp: import.meta.env.VITE_SUPPORT_WHATSAPP || '',
   supportEmail: import.meta.env.VITE_SUPPORT_EMAIL || '',
